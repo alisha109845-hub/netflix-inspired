@@ -68,6 +68,26 @@ Open the local URL shown in the terminal.
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run Oxlint |
 
+## Deploying to Netlify
+
+1. Push the project to GitHub, GitLab, or Bitbucket.
+2. Sign in to [Netlify](https://app.netlify.com/) and select **Add new project** > **Import an existing project**.
+3. Choose your Git provider and select this repository.
+4. Confirm these build settings:
+
+	- **Build command:** `npm run build`
+	- **Publish directory:** `dist`
+
+5. Open **Project configuration** > **Environment variables** and add:
+
+	```text
+	VITE_TMDB_TOKEN=your_tmdb_read_access_token
+	```
+
+6. Select **Deploy**. Netlify will install dependencies, build the Vite app, and publish it.
+
+The included `netlify.toml` also defines these build settings and redirects all routes to `index.html`, so React Router works when a page is refreshed directly.
+
 ## Project Structure
 
 ```text
@@ -88,4 +108,8 @@ Movie, TV, genre, and trailer data is fetched from TMDB. The demo login flow and
 
 ## License
 
-This project is intended for learning and portfolio use. TMDB data and images are provided under the terms of the [TMDB API terms of use](https://developer.themoviedb.org/docs/faq).
+This project is intended for learning and portfolio use. TMDB data and images are provided under the terms of the [TMDB API terms of use](https://developer.themovied.org/docs/faq).
+
+
+
+
